@@ -18,16 +18,14 @@ root = tk.Tk()
 root.title("URL Shortener")
 root.geometry('600x400')
 
-
 # Create an Entry widget for user input
-tk.Label(root,text="Short link",font=("Helvetica",50 ,"bold"),fg="blue").pack()
+tk.Label(root,text="Short link",font=("Helvetica",40,"bold"),fg="blue").pack()
 
-
-link_entry = tk.Entry(root, width=50)
-link_entry.pack(pady=10)
+link_entry = tk.Entry(root, width=70,fg='yellow',background='#115e5f')
+link_entry.pack()
 
 # Create a Button widget to shorten the URL
-shorten_button = tk.Button(root, text="Shorten URL", command=shorten_url,font=("Helvetica",15 ,"bold"),fg="red")
+shorten_button = tk.Button(root,width=10, text="Shorten URL", command=shorten_url,font=("Helvetica",15 ,"bold"),fg="red",background='#dbbc8a')
 shorten_button.pack()
 
 # Create a Label widget to display the result

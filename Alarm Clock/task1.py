@@ -9,7 +9,6 @@ import winsound
 root = tk.Tk()
 root.title("Alarm Clock")
 root.geometry('800x600')
-
 alarms = []  # List to store alarm times
 # Function to add a new alarm
 def add_alarm():
@@ -44,7 +43,6 @@ def check_alarms():
         if alarm == current_time:
                 messagebox.showinfo("Alarm", f"Alarm triggered at {alarm}!")
                 winsound.PlaySound("alarm.wav",winsound.SND_ASYNC)
-         
 # Create and configure widgets
 
 tk.Label(root,text="Alarm Clock",font=("Helvetica",50 ,"bold"),fg="red").pack(pady=10)
@@ -55,7 +53,7 @@ time_label.pack(pady=20)
 alarm_label = tk.Label(root, text="Set Alarm (Hours:Minutes)", font=("Helvetica", 16,"bold"),fg="green")
 alarm_label.pack()
 
-alarm_entry = tk.Entry(root, font=("Helvetica", 24),fg="red")
+alarm_entry = tk.Entry(root, font=("Helvetica", 24),fg="yellow",background='#115e5f')
 alarm_entry.pack()
 
 add_button = tk.Button(root, text="Add Alarm", command=add_alarm, font=("Helvetica", 16,"bold"),fg="blue")
