@@ -5,6 +5,7 @@ from tkinter import *
 
 # Create tkinter 
 otp= Tk()
+otp.title('OTP Verification')
 otp.geometry('800x600')
 otp.config(background='#0d295c')
 
@@ -13,11 +14,9 @@ def generateOTP():
     randomCode = ''.join(str(random.randint(0, 9)) for i in range(6))
     return randomCode
 
-
 sender = 'leilahamada89@gmail.com'
 password = 'fvypeunocpzhllkz'
 code = generateOTP()
-
 
 def connectingSender():
     receiver = receiverMail.get()
@@ -26,20 +25,18 @@ def connectingSender():
     server.login(sender, password)
     sendingMail(receiver, server)
 
-
 def sendingMail(receiver, server):
     msg = 'Hello! \n This is your OTP is ' + code
     server.sendmail(sender, receiver, msg)
     server.quit()
 
-
 def checkOTP():
     if code == codeEntry.get():
         accept = Label(otp, text='Successful Verification!', background='#0d295c',fg='green', font=('Helvetica', 20))
-        accept.place(x=230, y=350)
+        accept.place(x=550, y=350)
     else:
         refuse = Label(otp, text='Unsuccessful Verification!', fg='yellow',background='#0d295c', font=('Helvetica', 20))
-        refuse.place(x=230, y=350)
+        refuse.place(x=550, y=350)
 
 # labels
 OTP = tk.Label(text='OTP Verification',fg='yellow',background='#0d295c',font=('Helvetica',40))
